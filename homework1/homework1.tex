@@ -157,9 +157,80 @@ $$\frac{\partial u}{\partial x}=\frac{\partial u}{\partial y}=0.$$
 易知$u(x,y)$是常数, 由(i)可得$f$为常数. 因而$f$是一常数.
 
 \section{2.2/3}
+
+设$f(z)=u(x,y)+iv(x,y)=\sqrt{xy}$, $u(x,y)=\sqrt{xy}$, $v(x,y)=0$.
+$$\frac{\partial u}{\partial x}=\lim_{h\to0}\frac{u(h,0)-u(0,0)}{h}=0,$$
+$$\frac{\partial u}{\partial y}=\lim_{h\to0}\frac{u(0,h)-u(0,0)}{h}=0,$$
+$$\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}=0,$$
+$$\frac{\partial f}{\partial\bar{z}}=\frac{1}{2}\left(\frac{\partial u}{\partial x}-\frac{\partial v}{\partial y}\right)+\frac{i}{2}\left(\frac{\partial u}{\partial y}+\frac{\partial v}{\partial x}\right)=0.$$
+
+故$f(z)$在$z=0$处满足Cauchy-Riemann方程.
+
+设$h=x+xi$
+$$\lim_{h\to0}\frac{f(h)-f(0)}{h}=\lim_{x\to0}\frac{|x|}{x+xi}.$$
+
+如果让$x$取正数, 则上述极限为$\dfrac{1}{1+i}$; 如果让$h$取负数, 则上述极限为$-\dfrac{1}{1+i}$.
+
+因此, 当$h\to0$时上述极限不存在, 因而$f$在$z=0$中处不可微.
+
 \section{2.2/4}
+
+由$z=x+yi=r(\cos\theta+i\sin\theta)$得
+$$x(r,\theta)=r\cos\theta,\quad y(r,\theta)=r\sin\theta,$$
+$$\frac{\partial x}{\partial r}=\cos\theta,\quad \frac{\partial x}{\partial \theta}=-r\sin\theta,$$
+$$\frac{\partial y}{\partial r}=\sin\theta,\quad \frac{\partial y}{\partial \theta}=r\cos\theta.$$
+
+$f(z)=u(x,y)+iv(x,y)=u(r,\theta)+iv(r,\theta)$, 由链式求导法则可得
+$$\frac{\partial u}{\partial r}=\frac{\partial u}{\partial x}\frac{\partial x}{\partial r}+\frac{\partial u}{\partial y}\frac{\partial y}{\partial r}=\frac{\partial u}{\partial x}\cos\theta+\frac{\partial u}{\partial y}\sin\theta,$$
+$$\frac{1}{r}\frac{\partial v}{\partial\theta}=\frac{1}{r}\left(\frac{\partial v}{\partial x}\frac{\partial x}{\partial\theta}+\frac{\partial v}{\partial y}\frac{\partial y}{\partial\theta}\right)=-\frac{\partial v}{\partial x}\sin\theta+\frac{\partial v}{\partial y}\cos\theta,$$
+$$\frac{\partial v}{\partial r}=\frac{\partial v}{\partial x}\frac{\partial x}{\partial r}+\frac{\partial v}{\partial y}\frac{\partial y}{\partial r}=\frac{\partial v}{\partial x}\cos\theta+\frac{\partial v}{\partial y}\sin\theta,$$
+$$-\frac{1}{r}\frac{\partial u}{\partial\theta}=\frac{1}{r}\left(\frac{\partial u}{\partial x}\frac{\partial x}{\partial\theta}+\frac{\partial u}{\partial y}\frac{\partial y}{\partial\theta}\right)=\frac{\partial u}{\partial x}\sin\theta-\frac{\partial u}{\partial y}\cos\theta.$$
+
+代入Cauchy-Riemann方程
+$$\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\quad\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}.$$
+
+可知
+$$\frac{\partial u}{\partial r}=\frac{1}{r}\frac{\partial v}{\partial\theta},\quad \frac{\partial v}{\partial r}=-\frac{1}{r}\frac{\partial u}{\partial\theta}.$$
+
 \section{2.2/5}
+
+同上题, 由链式求导法则可得
+$$\frac{\partial f}{\partial r}=\frac{\partial f}{\partial x}\frac{\partial x}{\partial r}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial r}=\frac{\partial f}{\partial x}\cos\theta+\frac{\partial f}{\partial y}\sin\theta,$$
+$$\frac{i}{r}\frac{\partial f}{\partial\theta}=\frac{i}{r}=\left(\frac{\partial f}{\partial x}\frac{\partial x}{\partial\theta}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial\theta}\right)=-\frac{\partial f}{\partial x}i\sin\theta+\frac{\partial f}{\partial y}i\cos\theta.$$
+
+代入可知
+$$\frac{1}{2}e^{i\theta}\left(\frac{\partial f}{\partial r}+\frac{i}{r}\frac{\partial f}{\partial\theta}\right)=
+  \frac{1}{2}e^{i\theta}\left[\frac{\partial f}{\partial x}(\cos\theta-i\sin\theta)+\frac{\partial f}{\partial y}(\sin\theta+i\cos\theta)\right]=
+  \frac{1}{2}\left(\frac{\partial f}{\partial x}+i\frac{\partial f}{\partial y}\right)=\frac{\partial f}{\partial\bar{z}},$$
+$$\frac{1}{2}e^{-i\theta}\left(\frac{\partial f}{\partial r}-\frac{i}{r}\frac{\partial f}{\partial\theta}\right)=
+  \frac{1}{2}e^{-i\theta}\left[\frac{\partial f}{\partial x}(\cos\theta+i\sin\theta)+\frac{\partial f}{\partial y}(\sin\theta-i\cos\theta)\right]=
+  \frac{1}{2}\left(\frac{\partial f}{\partial x}-i\frac{\partial f}{\partial y}\right)=\frac{\partial f}{\partial z}.$$
+
+
+
 \section{2.2/8}
+
+$$.$$
+
+由$f\in H(D)$可知
+$$\frac{\partial f}{\partial z}=f'(z),\quad \frac{\partial f}{\partial\bar{z}}=0.$$
+
+由$\overline{f(\bar{z})}\in H(D)$由此可知
+$$\overline{f(\overline{z_0+\Delta z})}-\overline{f(\overline{z_0})}=\frac{\partial\bar{f}}{\partial z}\Delta z+ \frac{\partial\bar{f}}{\partial\bar{z}}\overline{\Delta z}+o(|\Delta z|).$$
+$$\frac{\partial\bar{f}}{\partial\bar{z}}=\overline{f'(z)},\quad\frac{\partial\bar{f}}{\partial z}=0.$$
+
+故
+\begin{align*}
+   & \quad \left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\right)|f(z)|^p          \\
+   & = \Delta|f(z)\overline{f(z)}|^{p/2}                                                                 \\
+   & =4\frac{\partial^2}{\partial z\partial\bar{z}}|f(z)\overline{f(z)}|^{p/2}                           \\
+   & =4\frac{\partial^2}{\partial z\partial\bar{z}}|f(z)\overline{f(z)}|^{p/2}                           \\
+   & = 4\frac{\partial}{\partial\bar{z}}\frac{p}{2}|f(z)|^{p/2-1}|f'(z)||\overline{f(z)}|^{p/2}          \\
+   & = 4\cdot\frac{p}{2}|f(z)|^{p/2-1}|f'(z)|\cdot\frac{p}{2}|\overline{f(z)}|^{p/2-1}|\overline{f'(z)}| \\
+   & =p^2|f(z)\overline{f(z)}|^{p/2-1}|f'(x)\overline{f'(x)}|                                            \\
+   & = p^2|f(z)|^{p-2}|f'(x)|^2.
+\end{align*}
+
 
 
 \end{document}
