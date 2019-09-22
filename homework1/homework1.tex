@@ -1,0 +1,165 @@
+\documentclass{article}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{indentfirst}
+\usepackage{physics}
+\geometry{left=3.0cm,right=3.0cm,top=3.0cm,bottom=4.0cm}
+\usepackage{ctex}
+\renewcommand{\thesection}{习题}
+\DeclareMathOperator*{\suplim}{\overline{\lim}}
+\DeclareMathOperator*{\inflim}{\underline{\lim}}
+
+\title{MA326\ 复分析\ 作业一}
+\author{刘逸灏 515370910207}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{2.1/1}
+
+\subsection*{(i)}
+
+对于任意$z\in\mathbf{C}$有
+$$\frac{f(z+h)-f(z)}{h}=\frac{|z+h|-|z|}{h}=\frac{|z+h|^2-|z|^2}{h(|z+h|+|z|)}=\frac{z\bar{h}+\bar{z}h+|h|^2}{h(|z+h|+|z|)}.$$
+
+当$z\neq0$时
+$$\lim_{h\to0}\frac{f(z+h)-f(z)}{h}=\lim_{h\to0}\frac{z\bar{h}+\bar{z}h}{2|z|h}=\lim_{h\to0}\frac{z\bar{h}/h+\bar{z}}{2|z|}.$$
+
+如果让$h$取实数, 则上述极限为$\dfrac{z+\bar{z}}{2|z|}$; 如果让$h$取纯虚数, 则上述极限为$\dfrac{-z+\bar{z}}{2|z|}$.
+
+当$z=0$时
+$$\lim_{h\to0}\frac{f(z+h)-f(z)}{h}=\lim_{h\to0}\frac{|h|^2}{h|h|}=\lim_{h\to0}\frac{|h|}{h}.$$
+
+如果让$h$取实数, 则上述极限为$1$; 如果让$h$取纯虚数, 则上述极限为$-1$.
+
+因此, 当$h\to0$时上述极限不存在, 因而在$\mathbf{C}$中处处不可微.
+
+\subsection*{(ii)}
+
+对于任意$z\in\mathbf{C}$有
+$$\frac{f(z+h)-f(z)}{h}=\frac{|z+h|^2-|z|^2}{h}=\frac{z\bar{h}+\bar{z}h+|h|^2}{h}.$$
+
+当$z\neq0$时
+$$\lim_{h\to0}\frac{f(z+h)-f(z)}{h}=\lim_{h\to0}\frac{z\bar{h}+\bar{z}h}{h}=\lim_{h\to0}(z\bar{h}/h+\bar{z}).$$
+
+如果让$h$取实数, 则上述极限为$z+\bar{z}$; 如果让$h$取纯虚数, 则上述极限为$-z+\bar{z}$.
+
+当$z=0$时
+$$\lim_{h\to0}\frac{f(z+h)-f(z)}{h}=\lim_{h\to0}\frac{|h|^2}{h}=0.$$
+
+因此, 当$z\neq0$,$h\to0$时上述极限不存在, 因而仅在$z=0$处可微.
+
+\subsection*{(iii)}
+
+对于任意$z\in\mathbf{C}$有
+$$\lim_{h\to0}\frac{f(z+h)-f(z)}{h}=\lim_{h\to0}\frac{\Re(z+h)-\Re(z)}{h}=\lim_{h\to0}\frac{\Re(h)}{h}.$$
+
+如果让$h$取实数, 则上述极限为$1$; 如果让$h$取纯虚数, 则上述极限为$0$.
+
+因此, 当$h\to0$时上述极限不存在, 因而在$\mathbf{C}$中处处不可微.
+
+\subsection*{(v)}
+
+设$f(z)=z_0$, 对于任意$z\in\mathbf{C}$有
+$$\lim_{h\to0}\frac{f(z+h)-f(z)}{h}=\lim_{h\to0}\frac{z_0-z_0}{h}=0.$$
+
+因此, 当$h\to0$时上述极限存在, 因而在$\mathbf{C}$中处处可微.
+
+\section{2.1/2}
+
+由$f$和$g$都在$z_0$处可微有
+$$f'(z_0)=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0},$$
+$$g'(z_0)=\lim_{z\to z_0}\frac{g(z)-g(z_0)}{z-z_0}.$$
+
+由$f(z_0)=g(z_0)=0$, $g'(z_0)\neq 0$可得
+$$\frac{f'(z_0)}{g'(z_0)}=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{g(z)-g(z_0)}=\lim_{z\to z_0}\frac{f(z)}{g(z)}.$$
+
+\section{2.1/4}
+
+对于任意$z\in\mathbf{G}$有$\bar{z}\in\mathbf{D}$, 设$z+h\in\mathbf{G}$, 则$\overline{z+h}\in\mathbf{D}$.由$f$是$\mathbf{D}$上的全纯函数可得
+$$f'(\bar{z})=\lim_{\bar{h}\to0}\frac{f({\overline{z+h}})-f(\bar{z})}{\bar{h}},$$
+$$\overline{f'(\bar{z})}=\overline{\lim_{\bar{h}\to0}\frac{f({\overline{z+h}})-f(\bar{z})}{\bar{h}}}=\lim_{h\to0}\frac{\overline{f(\overline{z+h})-f(\bar{z})}}{h}=\lim_{h\to0}\frac{\overline{f({\overline{z+h}})}-\overline{f(\bar{z})}}{h}.$$
+
+因此$\overline{f(\bar{z})}$是$\mathbf{G}$上的全纯函数.
+
+\section{2.2/1}
+
+设$f(z)=u(x,y)+iv(x,y)$, 由$f\in H(D)$可知
+$$f'(z)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}+i\frac{\partial u}{\partial y}=0.$$
+
+故
+$$\frac{\partial u}{\partial x}=\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}=\frac{\partial u}{\partial y}=0.$$
+
+因此$u(x,y)$和$v(x,y)$都为常数, 因而$f$是一常数.
+
+\section{2.2/2}
+
+设$f(z)=u(x,y)+iv(x,y)$, 由$f\in H(D)$可知
+$$f'(z)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}+i\frac{\partial u}{\partial y},\quad\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\quad\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}.$$
+
+\subsection*{(i)}
+
+由$\Re f(z)$是常数可得
+$$\frac{\partial u}{\partial x}=\frac{\partial u}{\partial y}=0.$$
+
+故
+$$\frac{\partial u}{\partial x}=\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}=\frac{\partial u}{\partial y}=0.$$
+
+因此$u(x,y)$和$v(x,y)$都为常数, 因而$f$是一常数.
+
+\subsection*{(ii)}
+
+由$\Im f(z)$是常数可得
+$$\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}=0.$$
+
+故
+$$\frac{\partial u}{\partial x}=\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}=\frac{\partial u}{\partial y}=0.$$
+
+因此$u(x,y)$和$v(x,y)$都为常数, 因而$f$是一常数.
+
+\subsection*{(iii)}
+
+由$|f(z)|$是常数$k\in\mathbf{R}$可得
+$$u^2(x,y)+v^2(x,y)=k^2.$$
+
+若$k=0$易知$u(x,y)=v(x,y)=0$,$f(z)=0$.
+
+若$k=0$且存在, 分别对$x$, $y$求偏导可得
+$$2u(x,y)\frac{\partial u}{\partial x}+2v(x,y)\frac{\partial v}{\partial x}=u(x,y)\frac{\partial u}{\partial x}-v(x,y)\frac{\partial u}{\partial y}=0,$$
+$$2u(x,y)\frac{\partial u}{\partial y}+2v(x,y)\frac{\partial v}{\partial y}=u(x,y)\frac{\partial u}{\partial y}+v(x,y)\frac{\partial u}{\partial x}=0.$$
+
+解方程组可得
+$$\left[u^2(x,y)+v^2(x,y)\right]\frac{\partial u}{\partial x}=\left[u^2(x,y)+v^2(x,y)\right]\frac{\partial u}{\partial y}=0,$$
+$$\frac{\partial u}{\partial x}=\frac{\partial u}{\partial y}=0.$$
+
+易知$u(x,y)$是常数, 由(i)可得$f$为常数. 因而$f$是一常数.
+
+\subsection*{(iv)}
+
+由$\arg f(z)$是常数$k\in\mathbf{R}$可得
+$$\frac{v(x,y)}{u(x,y)}=\arctan k.$$
+
+若$\arctan k=0$或无穷易知$u(x,y)$或$v(x,y)$是常数, 由(i)(ii)可得$f$为常数.
+
+若$\arctan k\neq0$且存在,分别对$x$, $y$求偏导可得
+$$\frac{\partial v}{\partial x}=\arctan k\frac{\partial u}{\partial x}=-\frac{\partial u}{\partial y},\quad\frac{\partial v}{\partial y}=\arctan k\frac{\partial u}{\partial y}=\frac{\partial u}{\partial x}.$$
+
+解方程组可得
+$$(1+\arctan^2k)\frac{\partial u}{\partial x}=(1+\arctan^2k)\frac{\partial u}{\partial y}=0,$$
+$$\frac{\partial u}{\partial x}=\frac{\partial u}{\partial y}=0.$$
+
+易知$u(x,y)$是常数, 由(i)可得$f$为常数. 因而$f$是一常数.
+
+\section{2.2/3}
+\section{2.2/4}
+\section{2.2/5}
+\section{2.2/8}
+
+
+\end{document}
