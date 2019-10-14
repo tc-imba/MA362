@@ -1,0 +1,145 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{../ma362}
+\semester{Fall}
+\year{2019}
+\subtitlenumber{2}
+\author{刘逸灏 (515370910207)}
+
+\begin{document}
+\maketitle
+
+\section{2.4/1}
+
+设$z=x+yi$
+$$\overline{e^z}=\overline{e^{x+yi}}=\overline{e^x(\cos y+i\sin y)}=e^x\overline{\cos y+i\sin y}=e^x(\cos y-i\sin y)=e^{x-yi}=e^{\bar{z}}.$$
+
+\section{2.4/3}
+
+设$z=x+yi$
+$$e^z=e^{x+yi}=e^x(\cos y+i\sin y)=1,$$
+$$e^x=|e^z|=1 \Longrightarrow x=0,$$
+$$\cos y+i\sin y=\frac{e^z}{e^x}=1 \Longrightarrow y=2k\pi, \quad k\in Z.$$
+
+故$z=2k\pi i$, $k=0,\pm1,\cdots$.
+
+\section{2.4/4}
+
+\subsection*{(i)}
+
+由$f'(z)=f(z)$可得
+$$[f(z)e^{-z}]'=f'(z)e^{-z}-f(z)e^{-z}=0.$$
+
+根据习题2.2/1, $f(z)e^{-z}$为常数, 且已知$f(0)=1$, 可得
+$$f(z)e^{-z}=f(0)e^0=1,$$
+$$f(z)\equiv e^z.$$
+
+\subsection*{(ii)}
+
+由$f(z+\omega)=f(z)f(\omega)$可得
+$$[f(z+\omega)]'=f'(z)f(\omega)+f(z)\cdot 0=f'(z)f(\omega).$$
+
+当$z=0$时
+$$f'(\omega)=f'(0)f(\omega)=f(\omega).$$
+
+根据(i)可得$f(z)\equiv e^z$.
+
+\section{2.4/7}
+
+\subsection*{(i)}
+
+由$f'(z)=e^{-f(z)}$可得
+$$[e^{f(z)}-z]'=f'(z)e^{f(z)}-1=0.$$
+
+根据习题2.2/1, $e^{f(z)}-z$为常数, 且已知$f(1)=0$, 可得
+$$e^{f(z)}-z=e^{f(1)}-1=0,$$
+$$f(z)\equiv \ln z.$$
+
+\subsection*{(ii)}
+由$f(z\omega)=f(z)+f(\omega)$可得
+$$[f(z\omega)]'=\omega f'(z\omega)=f'(z)$$
+
+当$z=1$时
+$$\omega f'(\omega)=1,$$
+$$f'(\omega)=\frac{1}{\omega},$$
+$$f(\omega)=\ln\omega + C.$$
+
+代入$f(1)=0$可得$f(z)\equiv \ln z$.
+
+\section{2.4/8}
+
+$\forall z_1\neq z_2$, $z_1, z_2\in B(0,1)$
+$$f(z)=z^2+2z+3=(z+1)^2+2,$$
+$$f(z_1)-f(z_2)=(z_1+1)^2-(z_2+1)^2=(z_1-z_2)(z_1+z_2+2).$$
+
+$$|z_1+z_2+2|\geqslant 2-|z_1+z_2|,$$
+$$|z_1+z_2|\leqslant|z_1|+|z_2|<2,$$
+$$|z_1+z_2+2|>0.$$
+
+故$f(z_1)-f(z_2)\neq 0$, $f(z)$在$B(0,1)$单叶.
+
+\section{2.4/12}
+
+\subsection*{(i)}
+
+由$f'(z)=\mu\dfrac{f(z)}{z}$可得
+$$[f(z)z^{-\mu}]'=f'(z)z^{-\mu}-\mu f(z)z^{-\mu-1}=z^{-\mu}\left(f'(z)-\mu\frac{f(z)}{z}\right)=0.$$
+
+根据习题2.2/1, $f(z)z^{-\mu}$为常数, 且已知$f(1)=1$, 可得
+$$f(z)z^{-\mu}=f(1)\cdot 1^{-\mu}=1,$$
+$$f(z)\equiv z^{\mu}=e^{\mu\ln z}=|z|^\mu e^{i\mu\arg z}e^{i2k\pi\mu}.$$
+
+取$k=0$时的单叶性域
+$$f(z)\equiv |z|^\mu e^{i\mu\arg z}.$$
+
+\subsection*{(ii)}
+
+由$f(z\omega)=f(z)f(\omega)$可得
+$$[f(z\omega)]'=\omega f'(z\omega)=f'(z)f(\omega)+f(z)\cdot0=f'(z)f(\omega).$$
+
+当$z=1$时
+$$\omega f'(\omega)=\mu f(\omega),$$
+$$f'(\omega)=\mu\frac{f(\omega)}{\omega}.$$
+
+根据(i)可得$f(z)\equiv |z|^\mu e^{i\mu\arg z}$.
+
+\section{2.4/17}
+
+$\forall z_1\neq z_2$, $z_1, z_2\in D$, 即证
+$$\cos z_1-\cos z_2=-2\sin\frac{z_1+z_2}{2}\sin\frac{z_1-z_2}{2}\neq 0,$$
+$$\sin z_1-\sin z_2=2\cos\frac{z_1+z_2}{2}\sin\frac{z_1-z_2}{2}\neq 0.$$
+
+等价于当$k\in Z$
+\begin{align*}
+  \cos z\text{ 在}D\text{中单叶}: & \quad z_1+z_2\neq 2k\pi,\quad z_1-z_2\neq 2k\pi,     \\
+  \sin z\text{ 在}D\text{中单叶}: & \quad z_1+z_2\neq (2k+1)\pi,\quad z_1-z_2\neq 2k\pi.
+\end{align*}
+
+
+\subsection*{(i)}
+
+$$D=\{x\in \mathbf{C}:\theta_0<\Re z<\theta_0+\pi\}.$$
+$$\Re(z_1-z_2)\in(-\pi,0)\cup(0,\pi) \Longrightarrow z_1-z_2\neq 2k\pi.$$
+$$\Re(z_1+z_2)\in(2\theta_0,2\theta_0+2\pi)\Longrightarrow \left\{\begin{aligned}
+     & z_1+z_2\neq 2k\pi\ \text{当且仅当}\ \theta_0=k\pi                              \\
+     & z_1+z_2\neq (2k+1)\pi\ \text{当且仅当}\ \theta_0=\left(k+\frac{1}{2}\right)\pi\end{aligned}\right..
+$$
+
+故$\theta_0=k\pi$时, $\cos z$在$D$中单叶; $\theta_0=\left(k+\dfrac{1}{2}\right)\pi$时, $\sin z$在$D$中单叶.
+
+\subsection*{(ii)}
+
+$$D=\{x\in \mathbf{C}:\theta_0<\Re z<\theta_0+2\pi,\Im z>0\}.$$
+$$\Re(z_1-z_2)\in(-2\pi,0)\cup(0,2\pi) \Longrightarrow z_1-z_2\neq 2k\pi.$$
+$$\Im(z_1+z_2)=\Im z_1+\Im z_2 > 0\Longrightarrow z_1+z_2\neq k\pi.$$
+
+故$\cos z$和$\sin z$在$D$中单叶.
+
+\subsection*{(iii)}
+
+$$D=\{x\in \mathbf{C}:\theta_0<\Re z<\theta_0+2\pi,\Im z<0\}.$$
+$$\Re(z_1-z_2)\in(-2\pi,0)\cup(0,2\pi) \Longrightarrow z_1-z_2\neq 2k\pi.$$
+$$\Im(z_1+z_2)=\Im z_1+\Im z_2 < 0\Longrightarrow z_1+z_2\neq k\pi.$$
+
+故$\cos z$和$\sin z$在$D$中单叶.
+
+\end{document}
