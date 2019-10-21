@@ -8,7 +8,36 @@
 \begin{document}
 \maketitle
 
-\section{三/1}
+\section{三/3}
+\begin{problem}
+  设函数$f(z)$当$|z-z_0|>r_0(0<r_0<r)$时是连续的. 令$M(r)$表示$|f(z)|$在$|z-z_0|=r>r_0$上的最大值, 并且假定
+  $$\lim_{r\to+\infty} rM(r)=0.$$
+  试证明
+  $$\lim_{r\to+\infty}\int_{K_r}f(z)dz=0.$$
+  在这里$K_r$是圆$|z-z_0|=r$.
+\end{problem}
+
+$$0\leqslant\left|\int_{K_r}f(z)dz\right|\leqslant\int_{K_r}|f(z)|dz\leqslant2\pi rM(r),$$
+$$0\leqslant\lim_{r\to+\infty}\left|\int_{K_r}f(z)dz\right|\leqslant\lim_{r\to+\infty}2\pi rM(r)=0.$$
+故$$\lim_{r\to+\infty}\int_{K_r}f(z)dz=0.$$
+
+\section{三/4}
+\begin{problem}
+  如果满足上题中条件的函数$f(z)$还在$|z-z_0|>r_0$内解析, 那么对任何$r_1>r_0$,
+  $$\int_{K_{r_1}}f(z)dz=0.$$
+\end{problem}
+
+设$D=\{z\mid r_1<|z-z_0|<r\}$, 则$f\in H(D)\cap C(\overline{D})$, 且$K_{r_1}$和$K_r$是可求长闭曲线并围成了$D$, 根据柯西积分定理和推论可知
+$$\int_{K_{r_1}}f(z)dz=\lim_{r\to+\infty}\int_{K_r}f(z)dz=0.$$
+
+\section{三/8}
+\begin{problem}
+  如果积分路径不经过点$\pm i$, 那么
+  $$\int_0^1\frac{dz}{1+z^2}=\frac{\pi}{4}+k\pi\quad(k=0,\pm1,\pm2,\cdots).$$
+\end{problem}
+
+$$f(z)=\frac{1}{1+z^2},\quad f'(z)=-\frac{2z}{(1+z^2)^2}\quad (z\neq\pm i).$$
+设$D=\{z\mid z\neq\pm i\}$, 则$f\in H(D)$.
 
 
 \end{document}
