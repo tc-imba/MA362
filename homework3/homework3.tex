@@ -10,11 +10,11 @@
 
 \section{三/3}
 \begin{problem}
-  设函数$f(z)$当$|z-z_0|>r_0(0<r_0<r)$时是连续的. 令$M(r)$表示$|f(z)|$在$|z-z_0|=r>r_0$上的最大值, 并且假定
-  $$\lim_{r\to+\infty} rM(r)=0.$$
-  试证明
-  $$\lim_{r\to+\infty}\int_{K_r}f(z)dz=0.$$
-  在这里$K_r$是圆$|z-z_0|=r$.
+设函数$f(z)$当$|z-z_0|>r_0(0<r_0<r)$时是连续的. 令$M(r)$表示$|f(z)|$在$|z-z_0|=r>r_0$上的最大值, 并且假定
+$$\lim_{r\to+\infty} rM(r)=0.$$
+试证明
+$$\lim_{r\to+\infty}\int_{K_r}f(z)dz=0.$$
+在这里$K_r$是圆$|z-z_0|=r$.
 \end{problem}
 
 $$0\leqslant\left|\int_{K_r}f(z)dz\right|\leqslant\int_{K_r}|f(z)|dz\leqslant2\pi rM(r),$$
@@ -23,8 +23,8 @@ $$0\leqslant\lim_{r\to+\infty}\left|\int_{K_r}f(z)dz\right|\leqslant\lim_{r\to+\
 
 \section{三/4}
 \begin{problem}
-  如果满足上题中条件的函数$f(z)$还在$|z-z_0|>r_0$内解析, 那么对任何$r_1>r_0$,
-  $$\int_{K_{r_1}}f(z)dz=0.$$
+如果满足上题中条件的函数$f(z)$还在$|z-z_0|>r_0$内解析, 那么对任何$r_1>r_0$,
+$$\int_{K_{r_1}}f(z)dz=0.$$
 \end{problem}
 
 设$D=\{z\mid r_1<|z-z_0|<r\}$, 则$f\in H(D)\cap C(\overline{D})$, 且$K_{r_1}$和$K_r$是可求长闭曲线并围成了$D$, 根据柯西积分定理和推论可知
@@ -32,12 +32,127 @@ $$\int_{K_{r_1}}f(z)dz=\lim_{r\to+\infty}\int_{K_r}f(z)dz=0.$$
 
 \section{三/8}
 \begin{problem}
-  如果积分路径不经过点$\pm i$, 那么
-  $$\int_0^1\frac{dz}{1+z^2}=\frac{\pi}{4}+k\pi\quad(k=0,\pm1,\pm2,\cdots).$$
+如果积分路径不经过点$\pm i$, 那么
+$$\int_0^1\frac{dz}{1+z^2}=\frac{\pi}{4}+k\pi\quad(k=0,\pm1,\pm2,\cdots).$$
 \end{problem}
 
-$$f(z)=\frac{1}{1+z^2},\quad f'(z)=-\frac{2z}{(1+z^2)^2}\quad (z\neq\pm i).$$
-设$D=\{z\mid z\neq\pm i\}$, 则$f\in H(D)$.
+$$f(z)=\frac{1}{1+z^2}=\frac{1}{2i}\left(\frac{1}{z-i}-\frac{1}{z+i}\right),\quad f'(z)=-\frac{2z}{(1+z^2)^2}\quad (z\neq\pm i).$$
+设$D=\{z\mid z\neq\pm i\}$, 则$f\in H(D)$. 若积分路径不围绕$\pm i$, 则积分值可以按照延实轴积分计算:
+$$\int_0^1\frac{dz}{1+z^2}=\int_0^1\frac{dx}{1+x^2}=\arctan 1=\frac{\pi}{4}.$$
+若积分路径围绕$i$点$k_1$圈($\gamma_1$), 围绕$-i$点$k_2$圈($\gamma_2$), 其中$k_1,k_2\in Z$, 则积分值为:
+$$\int_0^1\frac{dz}{1+z^2}=\frac{\pi}{4}+\frac{1}{2i}\left(\int_{\gamma_1}\frac{dz}{z-i}-\int_{\gamma_2}\frac{dz}{z+i}\right)=\frac{\pi}{4}+\frac{1}{2i}(2k_1\pi i-2k_2\pi i)=\frac{\pi}{4}+k\pi,\quad(k=0,\pm1,\pm2,\cdots).$$
 
+\section{三/9}
+\begin{problem}
+证明:
+\begin{enumerate}
+  \item $\displaystyle\left|\int_C(x^2+iy^2)dz\right|\leqslant2$, $C$为联$-i$到$i$的线段;
+  \item $\displaystyle\left|\int_C(x^2+iy^2)dz\right|\leqslant\pi$, $C$为右半单位圆$|z|=1,\Re z\geqslant 0$;
+  \item $\displaystyle\left|\int_C\frac{1}{z^2}dz\right|\leqslant2$, $C$为联$i$到$i+1$的线段;
+\end{enumerate}
+\end{problem}
+
+\subsection*{(1)}
+$$x=0,\quad-1\leqslant y\leqslant 1\Longrightarrow|x^2+iy^2|\leqslant 1.$$
+$$L=2,\quad M=\sup_{z\in C}|f(z)|=\sup_{z\in C}|x^2+iy^2|=1.$$
+故根据长大不等式得
+$$\left|\int_C(x^2+iy^2)dz\right|\leqslant ML=2.$$
+
+\subsection*{(2)}
+$$x=\cos\theta,\quad y=\sin\theta \Longrightarrow|x^2+iy^2|\leqslant \cos^2\theta+\sin^2\theta=1.$$
+$$L=\pi,\quad M=\sup_{z\in C}|f(z)|=\sup_{z\in C}|x^2+iy^2|=1.$$
+故根据长大不等式得
+$$\left|\int_C(x^2+iy^2)dz\right|\leqslant ML=\pi.$$
+
+\subsection*{(3)}
+$$1\leqslant|z|\leqslant\sqrt{2}\Longrightarrow\left|\frac{1}{z^2}\right|\leqslant 1.$$
+$$L=1,\quad M=\sup_{z\in C}|f(z)|=\sup_{z\in C}\left|\frac{1}{z^2}\right|=1.$$
+故根据长大不等式得
+$$\left|\int_C\frac{1}{z^2}dz\right|\leqslant ML=1\leqslant 2.$$
+
+\section{三/11}
+\begin{problem}
+计算积分
+\begin{enumerate}
+  \item $\displaystyle\int_{|z|=1}\frac{e^z}{z}dz$;
+  \item $\displaystyle\int_{|z|=2}\frac{dz}{z^2+2}$;
+  \item $\displaystyle\int_{|z|=1}\frac{dz}{z^2+2}$;
+  \item $\displaystyle\int_{|z|=1}\frac{zdz}{(2z+1)(z-2)}$;
+\end{enumerate}
+\end{problem}
+
+\subsection*{(1)}
+设$f(z)=e^z$, $\gamma$为$|z|=1$, $D$为$\gamma$围成的域, 则$f\in H(D)\cap C(\overline{D})$, 根据柯西积分公式得
+$$f(z)=\frac{1}{2\pi i}\int_{|\xi|=1}\frac{f(\xi)}{\xi-z}d\xi,$$
+$$\int_{|z|=1}\frac{e^z}{z}dz=\int_{|\xi|=1}\frac{f(\xi)}{\xi-0}d\xi=2\pi i\cdot f(0)=2\pi i.$$
+
+\subsection*{(3)}
+设$f(z)=\dfrac{1}{z^2+2}$, $\gamma$为$|z|=2$, 则$\gamma$内有两个奇点$\sqrt{2}i$和$-\sqrt{2}i$, 则
+$$\int_{|z|=2}\frac{dz}{z^2+2}=\frac{1}{2\sqrt{2}i}\left(\int_{|z|=2}\frac{dz}{z-\sqrt{2}i}-\int_{|z|=2}\frac{dz}{z+\sqrt{2}i}\right)=\frac{1}{2\sqrt{2}i}(2\pi i-2\pi i)=0.$$
+
+\subsection*{(3)}
+设$f(z)=\dfrac{1}{z^2+2}$, $\gamma$为$|z|=1$, $D$为$\gamma$围成的域, 则$f\in H(D)\cap C(\overline{D})$, 根据柯西定理得
+$$\int_{|z|=1}\frac{dz}{z^2+2}=0.$$
+
+\subsection*{(4)}
+设$f(z)=\dfrac{z}{(2z+1)(z-2)}$, $\gamma$为$|z|=2$, 则$\gamma$内有一个奇点$-1/2$, 则
+$$\int_{|z|=1}\frac{zdz}{(2z+1)(z-2)}=\frac{1}{5}\left(\int_{|z|=1}\frac{dz}{2z+1}+\int_{|z|=1}\frac{2dz}{z-2}\right)=\frac{1}{10}\int_{|z|=1}\frac{dz}{z+1/2}=\frac{1}{10}\cdot2\pi i=\frac{1}{5}\pi i.$$
+
+\section{三/13}
+\begin{problem}
+设$$f(z)=\int_{|\xi|=3}\frac{3\xi^2+7\xi+1}{\xi-z}d\xi,$$
+求$f'(1+i)$.
+\end{problem}
+
+设$g(z)=3z^2+7z+1$, $\gamma$为$|z|=3$, $D$为$\gamma$围成的域, 则$g\in H(D)\cap C(\overline{D})$, 根据柯西积分公式得
+$$g(z)=\frac{1}{2\pi i}\int_{|\xi|=3}\frac{g(\xi)}{\xi-z}d\xi,$$
+$$f(z)=2\pi i\cdot g(z)=2\pi i(3z^2+7z+1),$$
+$$f'(z)=2\pi i(6z+7),$$
+$$f'(1+i)=2\pi i(6+6i+7)=-12\pi+26\pi i.$$
+
+\section{三/16}
+\begin{problem}
+如果$f(z)$在$|z-z_0|>r_0$内解析, 并且$\lim\limits_{z\to\infty}zf(z)=A$, 那么对任何正数$r>r_0,$
+$$\frac{1}{2\pi i}\int_{K_r}f(z)dz=A,$$
+在这里$K_r$是圆$|z-z_0|=r$, 积分是按反时针方向取的.
+\end{problem}
+
+设$R>r>r_0$, $D$为$K_r$和$K_R$围成的域, 则$f\in H(D)\cap C(\overline{D})$, 故
+$$\frac{1}{2\pi i}\int_{K_r}f(z)dz=\frac{1}{2\pi i}\int_{K_R}f(z)dz=\lim_{r\to\infty}\frac{1}{2\pi i}\int_{K_r}f(z)dz.$$
+根据柯西积分定理得
+$$A=\frac{1}{2\pi i}\int_{K_r}\frac{A}{z-z_0}dz=\frac{1}{2\pi i}\int_{K_r}\frac{A}{z}dz.$$
+$$\left|\frac{1}{2\pi i}\int_{K_r}f(z)dz-A\right|=\left|\frac{1}{2\pi i}\int_{K_r}\lim_{r\to\infty}\left(f(z)-\frac{A}{z}\right)dz\right|=0.$$
+故$$\frac{1}{2\pi i}\int_{K_r}f(z)dz=A.$$
+
+\section{三/17}
+\begin{problem}
+如果函数$f(z)$在简单闭曲线$C$的外区域$D$内及$C$上每一点解析, 并且
+$$\lim_{z\to\infty}f(z)=a,$$
+那么
+$$\frac{1}{2\pi i}\int_C\frac{f(\xi)}{\xi-z}d\xi=\left\{\begin{aligned}
+     & -f(z)+a & (\text{当}z\in D\text{时}),         \\
+     & a       & (\text{当}z\in C\text{的内区域时}),
+  \end{aligned}\right.$$
+这里沿$C$的积分是按反时针方向取的.
+\end{problem}
+
+根据柯西积分定理得
+$$a=\frac{1}{2\pi i}\int_{K_r}\frac{a}{\xi-z}d\xi,$$
+其中$K_r$是圆$|\xi-z|=r$. \medskip
+
+设$K_R\in D$, $D'$为$D$和$K_R$围成的域, 则$f\in H(D')\cap C(\overline{D'})$, $\gamma$为$K_R$和$C$组成,
+$$\left|\frac{1}{2\pi i}\int_{K_R}\frac{f(\xi)}{\xi-z}d\xi-a\right|=\left|\frac{1}{2\pi i}\int_{K_R}\lim_{R\to\infty}\frac{f(\xi)-a}{\xi-z}d\xi\right|=0.$$
+当$z\in D$时, 根据柯西积分定理得
+$$f(z)=\frac{1}{2\pi i}\int_\gamma\frac{f(\xi)}{\xi-z}d\xi=\frac{1}{2\pi i}\left(\int_{K_R}\frac{f(\xi)}{\xi-z}d\xi+\int_{C^-}\frac{f(\xi)}{\xi-z}d\xi\right),$$
+$$\frac{1}{2\pi i}\int_{C}\frac{f(\xi)}{\xi-z}d\xi=\frac{1}{2\pi i}\int_{K_R}\frac{f(\xi)}{\xi-z}d\xi-f(z)=-f(z)+a.$$
+
+当$z\in C$的内区域时, 根据柯西积分定理得
+$$0=\frac{1}{2\pi i}\int_\gamma\frac{f(\xi)}{\xi-z}d\xi=\frac{1}{2\pi i}\left(\int_{K_R}\frac{f(\xi)}{\xi-z}d\xi+\int_{C^-}\frac{f(\xi)}{\xi-z}d\xi\right),$$
+$$\frac{1}{2\pi i}\int_{C}\frac{f(\xi)}{\xi-z}d\xi=\frac{1}{2\pi i}\int_{K_R}\frac{f(\xi)}{\xi-z}d\xi=a.$$
+
+故$$\frac{1}{2\pi i}\int_C\frac{f(\xi)}{\xi-z}d\xi=\left\{\begin{aligned}
+     & -f(z)+a & (\text{当}z\in D\text{时}),         \\
+     & a       & (\text{当}z\in C\text{的内区域时}).
+  \end{aligned}\right.$$
 
 \end{document}
