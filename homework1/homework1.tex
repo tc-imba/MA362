@@ -9,6 +9,16 @@
 \maketitle
 
 \section{2.1/1}
+\begin{problem}
+研究下列函数的可微性:
+\begin{enumerate}[(i)]
+  \item $f(z)=|z|$;
+  \item $f(z)=|z|^2$;
+  \item $f(z)=\Re z$;
+  \addtocounter{enumi}{1}
+  \item $f(z)\text{为常数}$
+\end{enumerate}
+\end{problem}
 
 \subsection*{(i)}
 
@@ -59,6 +69,10 @@ $$\lim_{h\to0}\frac{f(z+h)-f(z)}{h}=\lim_{h\to0}\frac{z_0-z_0}{h}=0.$$
 因此, 当$h\to0$时上述极限存在, 因而在$\mathbf{C}$中处处可微.
 
 \section{2.1/2}
+\begin{problem}
+  设$f$和$g$都在$z_0$处可微, 且$f(z_0)=g(z_0)=0$, $g'(z_0)\neq 0$, 证明
+  $$\lim_{z\to z_0}\frac{f(z)}{g(z)}=\frac{f'(z_0)}{g'(z_0)}.$$
+\end{problem}
 
 由$f$和$g$都在$z_0$处可微有
 $$f'(z_0)=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0},$$
@@ -68,6 +82,9 @@ $$g'(z_0)=\lim_{z\to z_0}\frac{g(z)-g(z_0)}{z-z_0}.$$
 $$\frac{f'(z_0)}{g'(z_0)}=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{g(z)-g(z_0)}=\lim_{z\to z_0}\frac{f(z)}{g(z)}.$$
 
 \section{2.1/4}
+\begin{problem}
+  设域$G$和域$D$关于实轴对称. 证明: 如果$f(z)$是$D$上的全纯函数, 那么$\overline{f(\bar{z})}$是$G$上的全纯函数.
+\end{problem}
 
 对于任意$z\in\mathbf{G}$有$\bar{z}\in\mathbf{D}$, 设$z+h\in\mathbf{G}$, 则$\overline{z+h}\in\mathbf{D}$.由$f$是$\mathbf{D}$上的全纯函数可得
 $$f'(\bar{z})=\lim_{\bar{h}\to0}\frac{f({\overline{z+h}})-f(\bar{z})}{\bar{h}},$$
@@ -76,9 +93,12 @@ $$\overline{f'(\bar{z})}=\overline{\lim_{\bar{h}\to0}\frac{f({\overline{z+h}})-f
 因此$\overline{f(\bar{z})}$是$\mathbf{G}$上的全纯函数.
 
 \section{2.2/1}
+\begin{problem}
+  设$D$是$\mathbf{C}$中的域, $f\in H(D)$. 如果对每一个$z\in D$, 都有$f'(z)=0$, 证明$f$是一常数.
+\end{problem}
 
 设$f(z)=u(x,y)+iv(x,y)$, 由$f\in H(D)$可知
-$$f'(z)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}+i\frac{\partial u}{\partial y}=0.$$
+$$f'(z)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}-i\frac{\partial u}{\partial y}=0.$$
 
 故
 $$\frac{\partial u}{\partial x}=\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}=\frac{\partial u}{\partial y}=0.$$
@@ -86,9 +106,18 @@ $$\frac{\partial u}{\partial x}=\frac{\partial v}{\partial x}=\frac{\partial v}{
 因此$u(x,y)$和$v(x,y)$都为常数, 因而$f$是一常数.
 
 \section{2.2/2}
+\begin{problem}
+设$f\in H(D)$, 并且满足下列条件之一:
+\begin{enumerate}[(i)]
+  \item $\Re f(z)$是常数;
+  \item $\Im f(z)$是常数;
+  \item $|f(z)|$是常数;
+  \item $\arg f(z)$是常数;
+\end{enumerate}
+\end{problem}
 
 设$f(z)=u(x,y)+iv(x,y)$, 由$f\in H(D)$可知
-$$f'(z)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}+i\frac{\partial u}{\partial y},\quad\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\quad\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}.$$
+$$f'(z)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}=\frac{\partial v}{\partial y}-i\frac{\partial u}{\partial y},\quad\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\quad\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}.$$
 
 \subsection*{(i)}
 
@@ -144,6 +173,9 @@ $$\frac{\partial u}{\partial x}=\frac{\partial u}{\partial y}=0.$$
 易知$u(x,y)$是常数, 由(i)可得$f$为常数. 因而$f$是一常数.
 
 \section{2.2/3}
+\begin{problem}
+  设$z=x+iy$, 证明$f(z)=\sqrt{xy}$在$z=0$处满足Cauchy-Riemann方程, 但$f$在$z=0$处不可微.
+\end{problem}
 
 设$f(z)=u(x,y)+iv(x,y)=\sqrt{xy}$, $u(x,y)=\sqrt{xy}$, $v(x,y)=0$.
 $$\frac{\partial u}{\partial x}=\lim_{h\to0}\frac{u(h,0)-u(0,0)}{h}=0,$$
@@ -161,6 +193,13 @@ $$\lim_{h\to0}\frac{f(h)-f(0)}{h}=\lim_{x\to0}\frac{|x|}{x+xi}.$$
 因此, 当$h\to0$时上述极限不存在, 因而$f$在$z=0$中处不可微.
 
 \section{2.2/4}
+\begin{problem}
+  设$z=r(\cos\theta+i\sin\theta)$, $f(z)=u(r,\theta)+iv(r,\theta)$, 证明Cauchy-Riemann方程为
+  $$\left\{\begin{aligned}
+    &\frac{\partial u}{\partial r}=\frac{1}{r}\frac{\partial v}{\partial\theta},\\
+    &\frac{\partial v}{\partial r}=-\frac{1}{r}\frac{\partial u}{\partial\theta}.
+  \end{aligned}\right.$$
+\end{problem}
 
 由$z=x+yi=r(\cos\theta+i\sin\theta)$得
 $$x(r,\theta)=r\cos\theta,\quad y(r,\theta)=r\sin\theta,$$
@@ -180,6 +219,13 @@ $$\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\quad\frac{\partia
 $$\frac{\partial u}{\partial r}=\frac{1}{r}\frac{\partial v}{\partial\theta},\quad \frac{\partial v}{\partial r}=-\frac{1}{r}\frac{\partial u}{\partial\theta}.$$
 
 \section{2.2/5}
+\begin{problem}
+  设$z=r(\cos\theta+i\sin\theta)$, 证明:
+  \begin{align*}
+    &\frac{\partial f}{\partial \bar{z}}=\frac{1}{e^{i\theta}}\left(\frac{\partial f}{\partial r}+\frac{i}{r}\frac{\partial f}{\partial\theta}\right),\\
+    &\frac{\partial f}{\partial z}=\frac{1}{e^{-i\theta}}\left(\frac{\partial f}{\partial r}-\frac{i}{r}\frac{\partial f}{\partial\theta}\right).
+  \end{align*}
+\end{problem}
 
 同上题, 由链式求导法则可得
 $$\frac{\partial f}{\partial r}=\frac{\partial f}{\partial x}\frac{\partial x}{\partial r}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial r}=\frac{\partial f}{\partial x}\cos\theta+\frac{\partial f}{\partial y}\sin\theta,$$
@@ -196,6 +242,10 @@ $$\frac{1}{2}e^{-i\theta}\left(\frac{\partial f}{\partial r}-\frac{i}{r}\frac{\p
 
 
 \section{2.2/8}
+\begin{problem}
+  设$D$是$\mathbf{C}$中的域, $f\in H(D)$, $f$在$D$中不取零值. 证明: 对任意$p>0$, 有
+  $$\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\right)|f(z)|^p= p^2|f(z)|^{p-2}|f'(x)|^2.$$
+\end{problem}
 
 由$f\in H(D)$可知
 $$\frac{\partial f}{\partial z}=f'(z),\quad \frac{\partial f}{\partial\bar{z}}=0.$$
