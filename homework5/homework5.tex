@@ -16,6 +16,114 @@ $$\left(\frac{1}{f(z)}\right)'=\frac{f'(z)}{f(z)^2}.$$
 由$|f(z)|$恒大于一个正的常数可知$f(z)\neq 0$, 故$\dfrac{1}{f(z)}$在$z$平面上解析, 为整函数, 且$\left|\dfrac{1}{f(z)}\right|$恒小于一个正的常数, 即$\dfrac{1}{f(z)}$有界. 故根据刘维尔定理可知$\dfrac{1}{f(z)}$为常数, 即$f(z)$为常数.
 
 \section{三(一)/16}
+\begin{problem}
+分别由下列条件求解析函数$f(z)=u+iv$.
+\begin{enumerate}
+  \item $u=x^2+xy-y^2,\quad f(i)=-1+i$;
+  \item $u=e^x(x\cos y-y\sin y),\quad f(0)=0$.
+\end{enumerate}
+\end{problem}
 
+\subsection*{(1)}
+$$u_x=2x+y,\quad u_{xx}=2,\quad u_y=x-2y,\quad u_{yy}=-2.$$
+故$u_{xx}+u_{yy}=0$, $u(x,y)$为调和函数. 根据柯西黎曼方程得
+$$v_y=u_x=2x+y,$$
+$$dv(x,y)=v_xdx+v_ydy=-u_xdx+u_xdy\Longrightarrow v=\int u_xdy+\varphi(x)=2xy+\frac{1}{2}y^2+\varphi(x),$$
+$$v_x=2y+\varphi'(x)=-u_y=-x+2y,$$
+$$\varphi'(x)=-x\Longrightarrow\varphi(x)=-\frac{1}{2}x^2+C,$$
+$$v(x,y)=-\frac{1}{2}x^2+2xy+\frac{1}{2}y^2+C,$$
+代入初值条件$f(i)=-1+i$,
+$$v(0,1)=\frac{1}{2}+C=1\Longrightarrow C=\frac{1}{2},$$
+$$v(x,y)=-\frac{1}{2}x^2+2xy+\frac{1}{2}y^2+\frac{1}{2},$$
+$$f(z)=x^2+xy-y^2+i\left(-\frac{1}{2}x^2+2xy+\frac{1}{2}y^2+\frac{1}{2}\right)=\left(1-\frac{i}{2}\right)z^2+\frac{i}{2}.$$
 
+\subsection*{(2)}
+$$u_x=e^x[(1+x)\cos y-y\sin y],\quad u_{xx}=e^x[(2+x)\cos y-y\sin y],$$
+$$u_y=-e^x[y\cos y+(1+x)\sin y],\quad u_{yy}=e^x[-(2+x)y\cos y+y\sin y].$$
+故$u_{xx}+u_{yy}=0$, $u(x,y)$为调和函数. 根据柯西黎曼方程得
+$$v_y=u_x=e^x[(1+x)\cos y-y\sin y],$$
+$$dv(x,y)=v_xdx+v_ydy=-u_xdx+u_xdy\Longrightarrow v=\int u_xdy+\varphi(x)=e^x(y\cos y+x\sin y)+\varphi(x),$$
+$$v_x=e^x[y\cos y+(1+x)\sin y]+\varphi'(x)=-u_y=e^x[y\cos y+(1+x)\sin y],$$
+$$\varphi'(x)=0\Longrightarrow\varphi(x)=C,$$
+$$v(x,y)=e^x(y\cos y+x\sin y)+C,$$
+代入初值条件$f(0)=0$,
+$$v(0,0)=\frac{1}{2}+C=0\Longrightarrow C=0,$$
+$$v(x,y)=e^x(y\cos y+x\sin y),$$
+$$f(z)=e^x(x\cos y-y\sin y)+ie^x(y\cos y+x\sin y)=e^x(x+yi)(\cos y+i\sin y)=ze^z.$$
+
+\section{三(一)/17}
+\begin{problem}
+设函数$f(x)$在区域$D$内解析, 试证
+$$\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\right)|f(z)|^2=4|f'(z)|^2.$$
+\end{problem}
+
+由$f\in H(D)$可知
+$$\frac{\partial f}{\partial z}=f'(z),\quad \frac{\partial f}{\partial\bar{z}}=0.$$
+
+由$\overline{f(\bar{z})}\in H(D)$由此可知
+$$\overline{f(\overline{z_0+\Delta z})}-\overline{f(\overline{z_0})}=\frac{\partial\bar{f}}{\partial z}\Delta z+ \frac{\partial\bar{f}}{\partial\bar{z}}\overline{\Delta z}+o(|\Delta z|).$$
+$$\frac{\partial\bar{f}}{\partial\bar{z}}=\overline{f'(z)},\quad\frac{\partial\bar{f}}{\partial z}=0.$$
+
+故
+\begin{align*}
+   & \quad \left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\right)|f(z)|^2 \\
+   & = \Delta|f(z)\overline{f(z)}|                                                              \\
+   & =4\frac{\partial^2}{\partial z\partial\bar{z}}|f(z)\overline{f(z)}|                        \\
+   & =4\frac{\partial}{\partial\bar{z}}\frac{\partial}{\partial z}|f(z)\overline{f(z)}|         \\
+   & = 4\frac{\partial}{\partial\bar{z}}|f'(z)||\overline{f(z)}|                                \\
+   & = 4|f'(z)||\overline{f'(z)}|                                                               \\
+   & =4|f'(x)\overline{f'(x)}|                                                                  \\
+   & = |f'(x)|^2.
+\end{align*}
+
+\section{三(一)/18}
+\begin{problem}
+设函数$f(z)$在区域$D$内解析, 且$f'(z)\neq 0$, 试证$\ln|f'(z)|$为区域$D$内的调和函数.
+\end{problem}
+
+由$f(z)\in H(D)$可知$f'(z)\in H(D)$, $f''(z)\in H(D)$, 且
+$$(\ln f'(z))'=\frac{f''(z)}{f'(z)}.$$
+由$f'(z)\neq 0$可知$\ln f'(z)\in D$, 又因为
+$$\ln f'(z)=\ln|f'(z)|+i\arg f'(z)+2k\pi i,$$
+故$u=\ln|f'(z)|$为$\ln f'(z)$的实部, 为调和函数.
+
+\section{三(二)/1}
+\begin{problem}
+设函数$f(z)$在$0<|z|<1$内解析, 且沿任何圆周$C:|z|=r,0<r<1$的积分值为零. 问$f(z)$是否必须在$z=0$处解析? 试举例证明之.
+\end{problem}
+
+设$g(z)=\sin z$, $D$为$C$围成的区域, 则$g\in H(D)\cap C(\overline{D})$, 根据柯西积分定理得
+$$g(z)=\frac{1}{2\pi i}\int_C\frac{g(\xi)}{\xi-z}d\xi,$$
+$$g(0)=0=\frac{1}{2\pi i}\int_C\frac{\sin\xi}{\xi}d\xi.$$
+故只需取$f(z)=\dfrac{\sin z}{z}$, 显然$f(z)$在$x=0$不解析也满足条件.
+
+\section{三(二)/14}
+\begin{problem}
+设$f(z)$为非常数的整函数, 又设$R,M$为任意正数, 试证: 满足$|z|>R$且$|f(z)|>M$的$z$必存在.
+\end{problem}
+假设存在$R,M$使得当$|z|>R$时, $|f(z)|\leqslant M$. 由$f(z)$是整函数可知在$|z|\in[0,R]$时, $\sup\limits_{|z|\in[0,R]}|f(z)|=M'$存在. 故在整个$z$平面上, $f(z)\leqslant\max\{M,M'\}$, 即有界. 根据刘维尔定理可知$f(z)$为常数, 与题设矛盾, 故得证.
+
+\section{三(二)/15}
+\begin{problem}
+已知$u+v=(x-y)(x^2+4xy+y^2)-2(x+y)$, 试确定解析函数$f(z)=u+iv$.
+\end{problem}
+由$f(z)$解析可知$u,v$都为调和函数
+$$\left\{\begin{aligned}u_x+v_x=3 x^2+6 x y-3 y^2-2, \\
+    u_y+v_y=3 x^2-6 x y-3 y^2-2.\end{aligned}\right.$$
+根据柯西黎曼方程得
+$$u_x=v_y,\quad u_y=-v_x,$$
+$$\left\{\begin{aligned}
+     & u_x-u_y=3 x^2+6 x y-3 y^2-2, \\
+     & u_x+u_y=3 x^2-6 x y-3 y^2-2.
+  \end{aligned}\right.\Longrightarrow\left\{\begin{aligned}
+     & u_x=3x^2-3y^2-2, \\
+     & u_y=-6xy.
+  \end{aligned}\right.$$
+$$u=\int u_ydy+\varphi(x)=\int-6xydy+\varphi(x)=-3xy^2+\varphi(x),$$
+$$u_x=-3y^2+\varphi'(x)=3x^2-3y^2-2,$$
+$$\varphi'(x)=3x^2-2\Longrightarrow \varphi(x)=x^3-2x+C,\quad C\in R.$$
+故
+$$u(x,y)=x^3-2x-3xy^2+C,$$
+$$v(x,y)=(x-y)(x^2+4xy+y^2)-2(x+y)-u(x,y)=-y^3-2y+3x^2y-C,$$
+$$f(z)=u(x,y)+iv(x,y)=x^3-2x-3xy^2+C+i(-y^3-2y+3x^2y-C)=z^3-2z+(1-i)C.$$
 \end{document}
