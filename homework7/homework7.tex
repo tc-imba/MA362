@@ -1,0 +1,137 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{../ma362}
+\semester{Fall}
+\year{2019}
+\subtitlenumber{7}
+\author{刘逸灏 (515370910207)}
+
+\begin{document}
+\maketitle
+
+\section{四(一)/14}
+\begin{problem}
+设$D$是周线$C$的内部, 函数$f(x)$在区域$D$内解析, 在闭域$\overline{D}=D+C$上连续, 其模$|f(z)|$在$C$上为常数, 试证: 若$f(z)$不恒等于一个常数, 则$f(z)$在$D$内至少有一个零点.
+\end{problem}
+
+当$f(z)$恒等于一个常数时, 显然成立. 假设$f(z)$不恒等于一个常数, 且$f(z)$在$D$内没有零点, 则对于$D$内的点$z_0$有$f(z_0)\neq 0$. 由于$f(z)$在闭域$\overline{D}$上连续, 可知存在$m$, $M$使得$m\leqslant |f(z)|\leqslant M$在$\overline{D}$上成立.
+由最小模和最大模原理可知, 对于$D$内的点$z_0$, $m<|f(z_0)|<M$, 故$m$和$M$都在周线$C$上. 又由于$|f(z)|$在$C$上为常数, 易知$m=M$, 此时与$m<|f(z_0)|<M$产生矛盾, 故若$f(z)$不恒等于一个常数, 则$f(z)$在$D$内至少有一个零点.
+
+\section{四(二)/3}
+\begin{problem}
+试证
+\begin{enumerate}
+  \item 如果$\sum\limits_{n=1}^\infty v_n=\delta$绝对收敛, 则$$|\delta|\leqslant|v_1|+|v_2|+\cdots+|v_n|+\cdots;$$
+  \item 对任一复数$z$, $$|e^z-1|\leqslant e^{|z|}-1\leqslant |z|e^{|z|};$$
+  \item 当$0<|z|<1$时, $$\frac{1}{4}|z|<|e^z-1|<\frac{7}{4}|z|.$$
+\end{enumerate}
+\end{problem}
+
+\subsection*{(1)}
+$$|\delta_n|=\left|\sum_{k=1}^n v_k\right|=|v_1+v_2+\cdots+v_k|,$$
+$$|\xi_n|=\sum_{k=1}^n |v_k|=|v_1|+|v_2|+\cdots+|v_k|.$$
+由三角不等式得
+$$|\delta_n|<|\xi_n|,\quad |\delta|=\lim_{n\to\infty}|\delta_n|\leqslant\lim_{n\to\infty}|\xi_n|=|v_1|+|v_2|+\cdots+|v_n|+\cdots.$$
+
+\subsection*{(2)}
+$$e^z-1=\sum_{n=0}^\infty\frac{z^n}{n!}-1=\sum_{n=1}^\infty\frac{z^n}{n!},$$
+$$e^{|z|}-1=\sum_{n=0}^\infty\frac{|z|^n}{n!}-1=\sum_{n=1}^\infty\frac{|z|^n}{n!},$$
+$$|z|e^{|z|}=|z|\sum_{n=0}^\infty\frac{|z|^n}{n!}=\sum_{n=1}^\infty\frac{|z|^n}{(n-1)!}.$$
+当$n\in N$时, $\dfrac{|z|^n}{n!}\leqslant \dfrac{|z|^n}{(n-1)!}$, 故
+$$e^{|z|}-1\leqslant|z|e^{|z|}.$$
+设$v_n=\dfrac{z^n}{n!}$, $\delta=e^z-1$, 根据(1)易知
+$$|\delta|=|e^z-1|\leqslant\sum_{n=1}^\infty\frac{|z|^n}{n!}=e^{|z|}-1\leqslant|z|e^{|z|}.$$
+
+\subsection*{(3)}
+由$0<|z|<1$, 可知$0<|z|^n<1$, $n\in N$, 故
+$$|e^z-1|\leqslant e^{|z|}-1 =\sum_{n=1}^\infty\frac{|z|^n}{n!}= |z|\sum_{n=1}^\infty\frac{|z|^{n-1}}{n!}<|z|\sum_{n=1}^\infty\frac{1}{n!}=|z|\left[1+\sum_{n=2}^\infty\frac{1}{n!}\right],$$
+$$|e^z-1|=\left|\sum_{n=1}^\infty\frac{z^n}{n!}\right|=|z|\left|\sum_{n=1}^\infty\frac{z^{n-1}}{n!}\right|=|z|\left|1+\sum_{n=2}^\infty\frac{z^{n-1}}{n!}\right|\geqslant|z|\left[1-\sum_{n=2}^\infty\frac{|z^{n-1}|}{n!}\right]>|z|\left[1-\sum_{n=2}^\infty\frac{1}{n!}\right],$$
+$$\sum_{n=2}^\infty\frac{1}{n!}=\frac{1}{2}+\sum_{n=3}^\infty\frac{1}{n!}<\frac{1}{2}+\frac{1}{2}\sum_{n=1}^\infty\frac{1}{3^n}=\frac{1}{2}+\frac{1}{2}\cdot\frac{\frac{1}{3}}{1-\frac{1}{3}}=\frac{3}{4}.$$
+综上可得
+$$\frac{1}{4}|z|<|e^z-1|<\frac{7}{4}|z|.$$
+
+\section{四(二)/4}
+\begin{problem}
+设$f(z)=\sum\limits_{n=0}^\infty a_nz^n(a_0\neq0)$的收敛半径$R>0$, 且$$M=\max_{|z|\leqslant\rho}|f(z)|\quad(\rho<R).$$
+试证: 在圆$$|z|<\frac{|a_0|}{|a_0|+M}\rho$$内$f(z)$无零点.
+\end{problem}
+
+由柯西不等式得
+$$|a_n|=\frac{f^{(n)}(0)}{n!}\leqslant\frac{M}{\rho^n},$$
+$$|f(z)-a_0|=\left|\sum_{n=1}^\infty a_nz^n\right|\leqslant\sum_{n=1}^\infty|a_nz^n|\leqslant\sum_{n=1}^\infty\frac{M|z|^n}{\rho^n}=M\frac{|z|/\rho}{1-|z|/\rho}=M\frac{|z|}{\rho-|z|},$$
+在圆$|z|<\dfrac{|a_0|}{|a_0|+M}\rho$内
+$$|f(z)-a_0|\leqslant M\frac{|z|}{\rho-|z|}<M\frac{\frac{|a_0|}{|a_0|+M}\rho}{\rho-\frac{|a_0|}{|a_0|+M}\rho}=|a_0|,$$
+$$|a_0|-|f(z)|<|a_0|\Longrightarrow |f(z)|>0.$$
+故$f(z)$无零点.
+
+\section{四(二)/5}
+\begin{problem}
+设在$|z|<R$内解析的函数$f(z)$有泰勒展式
+$$f(z)=a_0+a_1z+a_2z^2+\cdots+a_nz^n+\cdots,$$
+试证: 当$0\leqslant r<R$时,
+$$\frac{1}{2\pi}\int_0^{2\pi}|f(re^{i\theta})|^2d\theta=\sum_{n=0}^\infty|a_n|^2r^{2n}.$$
+\end{problem}
+$$|f(re^{i\theta})|^2=f(re^{i\theta})\overline{f(re^{i\theta})}=\sum_{n=0}^\infty a_n(re^{i\theta})^{n}\cdot\sum_{m=0}^\infty\overline{a_m(re^{i\theta})^{m}}=\sum_{n=0}^\infty\sum_{m=0}^\infty a_n\overline{a_m}r^{n+m}(e^{i\theta})^{n-m}.$$
+当$n=m$时
+$$\frac{1}{2\pi}\int_0^{2\pi}a_n\overline{a_m}r^{n+m}(e^{i\theta})^{n-m}d\theta=\frac{1}{2\pi}\int_0^{2\pi}|a_n|^2r^{2n}d\theta=|a_n|^2r^{2n}.$$
+当$n\neq m$时
+$$\frac{1}{2\pi}\int_0^{2\pi}a_n\overline{a_m}r^{n+m}(e^{i\theta})^{n-m}d\theta=\frac{1}{2\pi}\int_0^{2\pi}a_n\overline{a_m}r^{n+m}\left[\cos((n-m)\theta)+i\sin((n-m)\theta)\right]d\theta=0.$$
+故
+$$\frac{1}{2\pi}\int_0^{2\pi}|f(re^{i\theta})|^2d\theta=\sum_{n=0}^\infty\sum_{m=0}^\infty \frac{1}{2\pi}\int_0^{2\pi}a_n\overline{a_m}r^{n+m}(e^{i\theta})^{n-m}d\theta=\sum_{n=0}^\infty |a_n|^2r^{2n}.$$
+
+\section{四(二)/9}
+\begin{problem}
+设
+\begin{enumerate}
+  \item 函数$f(z)$在区域$D$内解析, $f(z)\neq$常数;
+  \item $C$为$D$内任一条周线, 只要$\overline{I(C)}$全含于$D$;
+  \item $A$为任一复数.
+\end{enumerate}
+试证: $f(z)=A$在$C$的内部$I(C)$只有有限个根.
+\end{problem}
+
+假设$f(z)=A$在$C$的内部$I(C)$有无限个根, 令$f_1(z)=f(z)$, $f_2(z)-A$, 则可找到一列$\{z_n\}\to z_0$, 使得$f_1(z)$和$f_2(z)$在其上等值, 根据唯一性定理可知$f_1(z)$和$f_2(z)$在$D$内恒等于$A$, 与条件矛盾, 故$f(z)=A$在$C$的内部$I(C)$只有有限个根.
+
+\section{四(二)/10}
+\begin{problem}
+问$|e^z|$在闭圆$z-z_0\leqslant1$上的何处达到最大? 并求出最大值.
+\end{problem}
+由于$f(z)=e^z$在区域$z-z_0\leqslant1$内解析, 根据最大模原理, $|f(z)|$的最大值只能取在圆周$z-z_0=1$上, 且
+$|e^z|=e^{\Re z}$, 故
+$$\max_{z-z_0\leqslant1}|e^z|=e^{\max\limits_{z-z_0=1}\Re z}=e^{\Re z_0+1}.$$
+
+\section{五(一)/1}
+\begin{problem}
+将下列各函数在指定圆环内展为洛朗级数.
+\begin{enumerate}
+  \item $\dfrac{z+1}{z^2(z-1)},0<|z|<1,1<|z|<+\infty$;
+        \addtocounter{enumi}{1}
+  \item $\dfrac{e^z}{z(z^2+1)},0<|z|<1$,只要含$\dfrac{1}{z}$到$z^2$各项.
+\end{enumerate}
+\end{problem}
+\subsection*{(1)}
+$$\frac{z+1}{z^2(z-1)}=-\frac{1}{z^2}-\frac{2}{z}+\frac{2}{z-1}.$$
+在$0<|z|<1$内, $|z|<1$
+$$\frac{z+1}{z^2(z-1)}=-\frac{1}{z^2}-\frac{2}{z}-\frac{2}{1-z}=-\frac{1}{z^2}-\frac{2}{z}-\sum_{n=0}^\infty 2z^n.$$
+在$1<|z|<+\infty$内, $\left|\frac{1}{z}\right|<1$
+$$\frac{z+1}{z^2(z-1)}=-\frac{1}{z^2}-\frac{2}{z}+\frac{2}{z}\cdot\frac{1}{1-\frac{1}{z}}=-\frac{1}{z^2}-\frac{2}{z}+\frac{2}{z}\sum_{n=0}^\infty \frac{1}{z^n}=\frac{1}{z^2}+\sum_{n=3}^\infty \frac{2}{z^n}.$$
+
+\subsection*{(3)}
+$$e^z=\sum_{n=0}^\infty\frac{z^n}{n!},\quad \frac{1}{z^2+1}=\frac{1}{1-(-z^2)}=\sum_{n=0}^\infty (-z^2)^n, $$
+$$\frac{e^z}{z(z^2+1)}=\sum_{n=0}^\infty\frac{z^n}{n!}\cdot\frac{1}{z}\cdot\sum_{n=0}^\infty (-z^2)^n\approx\frac{1}{z}+1-\frac{z}{2}-\frac{5z^2}{6}.$$
+
+\section{五(一)/2}
+将下列各函数在指定点的去心邻域内展成洛朗级数, 并指出其收敛范围.
+\begin{enumerate}
+  \item $\dfrac{1}{(z^2+1)^2}$, $z=i$;
+        \addtocounter{enumi}{1}
+  \item $e^{\frac{1}{1-z}}$, $z=1$及$z=\infty$.
+\end{enumerate}
+
+\subsection*{(1)}
+$$\frac{1}{z+i}=\frac{1}{z-i+2i}=\frac{1}{2i}\cdot\frac{1}{1+\frac{z-i}{2i}}=\frac{1}{2i}\sum_{n=0}^\infty(-1)^n\left(\frac{z-i}{2i}\right)^n,$$
+$$\frac{1}{(z^2+1)^2}=\frac{1}{(z-i)^2}\cdot\frac{1}{(z+i)^2}=-\frac{1}{4(z-i)^2}\left[\sum_{n=0}^\infty(-1)^n\left(\frac{z-i}{2i}\right)^n\right]^2=\frac{1}{16}\sum_{n=0}^\infty(n+1)(-1)^n\left(\frac{z-i}{2i}\right)^{n-1}.$$
+收敛范围为$0<|z-i|<2$.
+
+\subsection*{(3)}
+
+\end{document}
