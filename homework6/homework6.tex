@@ -1,0 +1,91 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{../ma362}
+\semester{Fall}
+\year{2019}
+\subtitlenumber{6}
+\author{刘逸灏 (515370910207)}
+
+\begin{document}
+\maketitle
+
+\section{四(一)/9}
+\begin{problem}
+设$z_0$是函数$f(z)$的$m$阶零点, 又是$g(z)$的$n$阶零点, 试问下列函数在$z_0$处具有何种性质?
+\begin{enumerate}
+  \item $f(z)+g(z)$;
+  \item $f(z)\cdot g(z)$;
+  \item $\dfrac{f(z)}{g(z)}$.
+\end{enumerate}
+\end{problem}
+
+设$$f(z)=(z-z_0)^m\varphi(z),\quad g(z)=(z-z_0)^n\psi(z),$$
+其中$\varphi(z)$, $\psi(z)$在点$z_0$的邻域$|z-z_0|<R$内解析, 且$\varphi(z_0),\psi(z_0)\neq0$.
+
+\subsection*{(1)}
+设$p=\min\{m,n\}$
+$$f(z)+g(z)=(z-z_0)^m\varphi(z)+(z-z_0)^n\psi(z)=(z-z_0)^p \chi(z),$$
+$$\chi(z)=(z-z_0)^{m-p}\varphi(z)+(z-z_0)^{n-p}\psi(z).$$
+由$m-p=0$或$n-p=0$至少有一个成立, 可得$\chi(z_0)=\varphi(z_0)$或$\psi(z_0)\neq 0$, 且$\chi(z)$在点$z_0$的邻域$|z-z_0|<R$内解析, 故$z_0$是函数的$\min\{m,n\}$阶零点.
+
+\subsection*{(2)}
+$$f(z)\cdot g(z)=(z-z_0)^{m+n}\varphi(z)\psi(z).$$
+$\varphi(z_0)\psi(z_0)\neq0$, 且$\varphi(z)\psi(z)$在点$z_0$的邻域$|z-z_0|<R$内解析, 故$z_0$是函数的$m+n$阶零点.
+
+\subsection*{(3)}
+$$\frac{f(z)}{g(z)}=(z-z_0)^{m-n}\frac{\varphi(z)}{\psi(z)}.$$
+当$m>n$时, $\dfrac{\varphi(z_0)}{\psi(z_0)}\neq0$, 且$\dfrac{\varphi(z)}{\psi(z)}$在点$z_0$的邻域$|z-z_0|<R$内解析, 故$z_0$是函数的$m-n$阶零点.
+
+当$m=n$时, $\dfrac{f(z)}{g(z)}=\dfrac{\varphi(z)}{\psi(z)}$, 故$z_0$没有特别性质. \medskip
+
+当$m<n$时, 函数在$z_0$处无定义, $z_0$为间断点.
+
+\section{四(一)/10}
+\begin{problem}
+设$z_0$为解析函数$f(z)$的至少$n$阶零点, 又为解析函数$\varphi(z)$的$n$阶零点, 则(试证)
+$$\lim_{z\to z_0}\frac{f(z)}{\varphi(z)}=\frac{f^{(n)}(z_0)}{\varphi^{(n)}(z_0)}\quad(\varphi^{(n)}(z_0)\neq0).$$
+\end{problem}
+
+设
+$$f(z)=(z-z_0)^mg(z),\quad \varphi(z)=(z-z_0)^n\psi(z),\quad m\geqslant n,$$
+$$g(z_0)=\frac{f^{(m)}(z_0)}{m!},\quad \psi(z_0)=\frac{\varphi^{(n)}(z_0)}{n!},$$
+其中$g(z)$, $\psi(z)$在点$z_0$的邻域$|z-z_0|<R$内解析, 且$g(z_0),\psi(z_0)\neq0$.
+
+$$\lim_{z\to z_0}\frac{f(z)}{\varphi(z)}=\lim_{z\to z_0}(z-z_0)^{m-n}\frac{g(z)}{\psi(z)}=\frac{g(z_0)}{\psi(z_0)}\lim_{z\to z_0}(z-z_0)^{m-n}.$$
+当$m>n$时
+$$f^{(n)}(z_0)=0,\quad \lim_{z\to z_0}\frac{f(z)}{\varphi(z)}=\frac{f^{(n)}(z_0)}{\varphi^{(n)}(z_0)}=0.$$
+当$m=n$时
+$$\lim_{z\to z_0}\frac{f(z)}{\varphi(z)}=\frac{g(z_0)}{\psi(z_0)}=\frac{f^{(n)}(z_0)}{\varphi^{(n)}(z_0)}.$$
+
+\section{四(一)/11}
+\begin{problem}
+在原点解析, 而在$z=\dfrac{1}{n}(n=1,2,\cdots)$处取下列各组值的函数是否存在:
+\begin{enumerate}
+  \addtocounter{enumi}{1}
+  \item $0,\dfrac{1}{2},0,\dfrac{1}{4},0,\dfrac{1}{6},\cdots$;
+        \addtocounter{enumi}{1}
+  \item $\dfrac{1}{2},\dfrac{2}{3},\dfrac{3}{4},\dfrac{4}{5},\dfrac{5}{6},\cdots$.
+\end{enumerate}
+\end{problem}
+
+\subsection*{(2)}
+若存在函数$f(z)$在$z=0$解析且满足$f\left(\dfrac{1}{2k-1}\right)=0(k=1,2,\cdots)$, 因零点列$\left\{\dfrac{1}{2k-1}\right\}$以$z=0$为极限点, 故由唯一性定理知, 在$z=0$的邻域内$f(z)\equiv 0$, 这与题设$f\left(\dfrac{1}{2k}\right)=\dfrac{1}{k}\neq 0$矛盾, 故不存在.
+
+\subsection*{(4)}
+设
+$$f\left(\frac{1}{z}\right)=\dfrac{z}{z+1},\quad f(z)=\frac{1/z}{1/z+1}=\frac{1}{z+1}.$$
+$f(z)$在原点$z=0$解析, 故满足题设条件.
+
+\section{四(一)/12}
+\begin{problem}
+设
+\begin{enumerate}
+  \item $f(z)$在区域$D$内解析;
+  \item 在某一点$z_0\in D$, 有$$f^{(n)}(z_0)=0,\quad n=1,2,\cdots$$
+\end{enumerate}
+试证$f(z)$在$D$内必为常数.
+\end{problem}
+
+$$f(z)=\sum_{n=0}^\infty\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n=f(z_0),\quad z\in B(z_0,R)\subset D.$$
+设$g(z)=f(z_0)$, 则$f(z)$和$g(z)$都在$D$内解析, 且在$D$内的子区域$B(z_0,R)$相等. 根据唯一性定理和其推论可知$f(z)=g(z)=f(z_0)$, 故$f(z)$在$D$内必为常数.
+
+\end{document}
