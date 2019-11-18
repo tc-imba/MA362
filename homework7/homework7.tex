@@ -120,12 +120,15 @@ $$e^z=\sum_{n=0}^\infty\frac{z^n}{n!},\quad \frac{1}{z^2+1}=\frac{1}{1-(-z^2)}=\
 $$\frac{e^z}{z(z^2+1)}=\sum_{n=0}^\infty\frac{z^n}{n!}\cdot\frac{1}{z}\cdot\sum_{n=0}^\infty (-z^2)^n\approx\frac{1}{z}+1-\frac{z}{2}-\frac{5z^2}{6}.$$
 
 \section{五(一)/2}
+\begin{problem}
 将下列各函数在指定点的去心邻域内展成洛朗级数, 并指出其收敛范围.
 \begin{enumerate}
   \item $\dfrac{1}{(z^2+1)^2}$, $z=i$;
         \addtocounter{enumi}{1}
   \item $e^{\frac{1}{1-z}}$, $z=1$及$z=\infty$.
 \end{enumerate}
+\end{problem}
+
 
 \subsection*{(1)}
 $$\frac{1}{z+i}=\frac{1}{z-i+2i}=\frac{1}{2i}\cdot\frac{1}{1+\frac{z-i}{2i}}=\frac{1}{2i}\sum_{n=0}^\infty(-1)^n\left(\frac{z-i}{2i}\right)^n,$$
@@ -133,5 +136,15 @@ $$\frac{1}{(z^2+1)^2}=\frac{1}{(z-i)^2}\cdot\frac{1}{(z+i)^2}=-\frac{1}{4(z-i)^2
 收敛范围为$0<|z-i|<2$.
 
 \subsection*{(3)}
+以$z=1$为中心时
+$$e^{\frac{1}{1-z}}=e^{-\frac{1}{z-1}}=\sum_{n=0}^\infty\frac{\left(-\frac{1}{z-1}\right)^n}{n!}=\sum_{n=0}^\infty\frac{(-1)^n}{n!(z-1)^n}.$$
+收敛范围为$0<|z-1|<+\infty$.
+
+以$z=+\infty$为中心时
+$$\frac{(-1)^n}{(z-1)^n}=(-z)^{-n}\left(1-\frac{1}{z}\right)^{-n}=(-z)^{-n}\sum_{k=0}^n\binom{n+k-1}{k}z^{-k}=(-1)^n\sum_{k=0}^n\binom{n+k-1}{k}z^{-n-k},$$
+$$e^{\frac{1}{1-z}}=\sum_{n=0}^\infty\frac{(-1)^n}{n!(z-1)^n}=1+\sum_{n=1}^\infty\frac{(-1)^n}{n!(z-1)^n}=1+\sum_{n=1}^\infty\frac{(-1)^n}{n!}\sum_{k=0}^n\binom{n+k-1}{k}z^{-n-k}.$$
+收敛范围为$1<|z|<+\infty$.
+
+
 
 \end{document}
