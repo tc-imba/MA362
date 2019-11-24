@@ -1,0 +1,103 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{../ma362}
+\semester{Fall}
+\year{2019}
+\subtitlenumber{8}
+\author{刘逸灏 (515370910207)}
+
+\begin{document}
+\maketitle
+
+\section{五(一)/4}
+\begin{problem}
+求出下列函数的奇点, 并确定它们的类别(对于极点, 要指出它们的阶), 对无穷远点也要加以讨论.
+\begin{enumerate}
+  \item $\dfrac{z-1}{z(z^2+4)^2}$;
+  \item $\dfrac{1}{\sin z+\cos z}$;
+        \addtocounter{enumi}{4}
+  \item $\dfrac{1-\cos z}{z^2}$;
+  \item $\dfrac{1}{e^z-1}$.
+\end{enumerate}
+\end{problem}
+\subsection*{(1)}
+$$\lim_{z\to\infty}\frac{z-1}{z(z^2+4)^2}=0.$$
+故$1$是一阶极点, $\pm2i$是二阶极点, $\infty$是可去奇点.
+
+\subsection*{(2)}
+$$\sin z+\cos z=\sin\left(z+\frac{\pi}{4}\right),$$
+$$(\sin z+\cos z)'=\cos\left(z+\frac{\pi}{4}\right),$$
+故$k\pi-\dfrac{\pi}{4}(k\in Z)$是$\sin z+\cos z$的一阶零点, 即$\dfrac{1}{\sin z+\cos z}$的一阶极点.
+
+$$\dfrac{1}{\sin z+\cos z}=\dfrac{1}{\sin\left(z+\frac{\pi}{4}\right)},$$
+故可找到一列$z_n$使得$\sin\left(z+\frac{\pi}{4}\right)=0$, 且$\lim\limits_{n\to\infty}z_n=\infty$, 故$\infty$是非孤立奇点.
+
+\subsection*{(7)}
+$$\lim_{z\to0}\frac{1-\cos z}{z^2}=\lim_{z\to0}\frac{\sin z}{2z}\lim_{z\to0}\frac{\cos z}{2}=\frac{1}{2},$$
+$$\lim_{z\to0}z^2\left(1-\cos\frac{1}{z}\right)=0,$$
+故$0$是可去奇点, $\infty$是可去奇点.
+
+\subsection*{(8)}
+当$z=2k\pi i$时, $e^z-1=e^{2k\pi i}-1=0$, $(e^z-1)'=e^z=e^{2k\pi i}=1$, 故$2k\pi i(k\in Z)$是一阶极点.
+
+可找到一列$\{z_n\}$, 使得$e^{z_n}-1=0$, 且$\lim\limits_{n\to\infty}z_n=\infty$, 故$\infty$是非孤立奇点.
+
+\section{五(一)/5}
+\begin{problem}
+下列函数在指定点的去心邻域内能否展为洛朗级数.
+\begin{enumerate}
+  \item $\cos\dfrac{1}{z}$, $z=0$;
+        \addtocounter{enumi}{1}
+  \item $\dfrac{1}{\sin\frac{1}{z}}$, $z=0$.
+\end{enumerate}
+\end{problem}
+\subsection*{(1)}
+$$\left(\cos\frac{1}{z}\right)'=\frac{\sin\frac{1}{z}}{z^2},$$
+在$z=0$的邻域都有定义, 故$0$是孤立奇点, 可展为洛朗级数.
+
+\subsection*{(3)}
+可找到一列$\{z_n\}$, 使得$\sin\dfrac{1}{z_n}=0$, 且$\lim\limits_{n\to\infty}z_n=0$, 故$0$是非孤立奇点, 不可展为洛朗级数.
+
+\section{五(一)/8}
+\begin{problem}
+判定下列函数的奇点及其类别(包括无穷远点).
+\begin{enumerate}
+  \item $\dfrac{1}{e^z-1}-\dfrac{1}{z}$;
+        \addtocounter{enumi}{1}
+  \item $\sin\dfrac{1}{z}+\dfrac{1}{z^2}$;
+        \addtocounter{enumi}{1}
+  \item $\dfrac{e^{\frac{1}{z-1}}}{e^z-1}$.
+\end{enumerate}
+\end{problem}
+\subsection*{(1)}
+根据4(8)可知, $2k\pi i(k\in Z)$是$\dfrac{1}{e^z-1}$的一阶极点, $\infty$是$\dfrac{1}{e^z-1}$的非孤立奇点. 同时$0$是$\dfrac{1}{z}$的一阶极点, $\infty$是$\dfrac{1}{z}$的可去奇点. 故只需讨论$z=0$的情况.
+$$\lim_{z\to0}\left(\frac{1}{e^z-1}-\frac{1}{z}\right)=\lim_{z\to0}\frac{z-e^z+1}{z(e^z-1)}=\lim_{z\to0}\frac{1-e^z}{e^z-1+ze^z}=\lim_{z\to0}\frac{-e^z}{(z+2)e^z}=\lim_{z\to0}\frac{-1}{z+2}=-\frac{1}{2},$$
+故$0$是可去奇点, $2k\pi i(k\in Z,k\neq0)$是一阶极点, $\infty$是非孤立奇点.
+
+\subsection*{(3)}
+$0$是$\sin\dfrac{1}{z}$的本质奇点, 是$\dfrac{1}{z^2}$的二阶极点, 综上可得$0$是本质奇点.
+$$\lim_{z\to\infty}\left(\sin\frac{1}{z}+\frac{1}{z^2}\right)=0,$$
+故$\infty$是可去奇点.
+
+\subsection*{(5)}
+根据4(8)可知, $2k\pi i(k\in Z)$是$\dfrac{1}{e^z-1}$的一阶极点, $\infty$是$\dfrac{1}{e^z-1}$的非孤立奇点. 同时$1$是$e^{\frac{1}{z-1}}$的本质奇点, $\infty$是$e^{\frac{1}{z-1}}$的可去奇点. 综上可得$2k\pi i(k\in Z)$是一阶极点, $1$是本质奇点, $\infty$是非孤立奇点.
+
+\section{五(一)/9}
+\begin{problem}
+试证: 在扩充$z$平面上解析的函数$f(z)$必为常数.
+\end{problem}
+假设非常数整函数$f(z)$在扩充$z$平面上解析, 则无穷远点必为可去奇点, 即$\lim\limits_{z\to\infty}f(z)=a$成立. 根据极限的定义可知$\forall\varepsilon>0$, $\exists N>0$, 当$|z|\geqslant N$时, $|f(z)-a|<\varepsilon$, 即$|f(z)|<\varepsilon+|a|$. 又因为$f(z)$在圆$|z|\leqslant N$内解析, 根据最大模定理可知$\max\limits_{|z|< N}|f(z)|<\max\limits_{|z|=N}|f(z)|<\varepsilon+|a|$.
+由$\varepsilon$取值的任意性可知$|f(z)|$在整个$z$平面上有界, 和刘维尔定理矛盾, 故得证.
+
+\section{五(一)/10}
+\begin{problem}
+刘维尔定理的几何意义是``非常数整函数的值不能全含于一圆之内'', 试证明: 非常数整函数的值不能全含于一圆之外.
+\end{problem}
+假设非常数整函数的值$f(z)$能全含于圆$|z-a|=R$外, 即$|f(z)-a|>R$, 设$g(z)=\dfrac{1}{f(z)-a}$, 显然$g(z)$也是非常数整函数, 且$|g(z)|<\dfrac{1}{R}$. 根据刘维尔定理可知有界整函数必为常数, 产生矛盾, 故得证.
+
+\section{五(二)/12}
+\begin{problem}
+设解析函数$f(z)$在扩充$z$平面上只有孤立奇点, 则奇点的个数必为有限个. 试证之.
+\end{problem}
+不需要考虑无穷远点, 只需证明$z$平面上奇点的个数为有限个即可. 假设有限区域$D$内包括了$z$平面上所有奇点, 且它们都是孤立的. 任取其中一个奇点, 它的半径$R$的去心邻域内一定没有其它奇点, 此时易知区域$D$内最多容纳$S_D/\pi R^2$个符合条件的奇点. 任取$R\to 0$的值, 孤立奇点的上限总是有限个, 否则一定会产生聚点, 与题设矛盾, 故得证.
+
+\end{document}
