@@ -1,0 +1,94 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{../ma362}
+\semester{Fall}
+\year{2019}
+\subtitlenumber{9}
+\author{刘逸灏 (515370910207)}
+\newcommand{\res}[1]{\mathop{\Res}\limits_{#1}}
+
+\begin{document}
+\maketitle
+
+\section{六(一)/1}
+\begin{problem}
+求下列函数$f(z)$在指定点的留数.
+\begin{enumerate}
+  \item $\dfrac{z}{(z-1)(z+1)^2}$在$z=\pm1,\infty$;
+        \addtocounter{enumi}{1}
+  \item $\dfrac{1-e^{2z}}{z^4}$在$z=0,\infty$;
+        \addtocounter{enumi}{2}
+  \item $\dfrac{e^z}{z^2-1}$在$z=\pm1,\infty$.
+\end{enumerate}
+\end{problem}
+\subsection*{(1)}
+1为一阶极点, -1为二阶极点.
+$$\res{z=1}f(z)=\left.\frac{z}{(z+1)^2}\right|_{z=1}=\frac{1}{4},$$
+$$\res{z=-1}f(z)=\left.\left(\frac{z}{z-1}\right)'\right|_{z=-1}=\left.-\frac{1}{(z-1)^2}\right|_{z=-1}=-\frac{1}{4},$$
+$$\res{z=\infty}f(z)=-\left[\res{z=1}f(z)+\res{z=-1}f(z)\right]=0.$$
+
+\subsection*{(3)}
+0为四阶极点.
+$$\res{z=0}f(z)=\frac{1}{3!}\left.(1-e^{2z})'''\right|_{z=0}=\left.-\frac{4}{3}e^{2z}\right|_{z=0}=-\frac{4}{3},$$
+$$\res{z=\infty}f(z)=-\res{z=0}f(z)=\frac{4}{3}.$$
+
+\subsection*{(6)}
+1为一阶极点, -1为一阶极点.
+$$\res{z=1}f(z)=\left.\frac{e^z}{z+1}\right|_{z=1}=\frac{e}{2},$$
+$$\res{z=-1}f(z)=\left.\frac{e^z}{z-1}\right|_{z=-1}=-\frac{1}{2e},$$
+$$\res{z=\infty}f(z)=-\left[\res{z=1}f(z)+\res{z=-1}f(z)\right]=\frac{1}{2e}-\frac{e}{2}.$$
+
+\section{六(一)/2}
+\begin{problem}
+球下列函数$f(z)$在其孤立奇点(包括无穷远点)处的留数($m$是正整数).
+\begin{enumerate}
+  \addtocounter{enumi}{2}
+  \item $\dfrac{1}{(z-\alpha)^m(z-\beta)}\quad(\alpha\neq\beta)$;
+  \item $\dfrac{e^z}{z^2(z-\pi i)^4}$;
+\end{enumerate}
+\end{problem}
+\subsection*{(3)}
+$\alpha$为$m$阶极点, $\beta$为一阶极点.
+$$\res{z=\alpha}f(z)=\frac{1}{(m-1)!}\left.\left(\frac{1}{z-\beta}\right)^{(m-1)}\right|_{z=\alpha}=\left.\frac{1}{(m-1)!}\cdot\frac{(-1)^{m-1}(m-1)!}{(z-\beta)^m}\right|_{z=\alpha}=\frac{(-1)^{m-1}}{(\alpha-\beta)^m}=-\frac{1}{(\beta-\alpha)^m},$$
+$$\res{z=\beta}f(z)=\left.\frac{1}{(z-\alpha)^m}\right|_{z=\beta}=\frac{1}{(\beta-\alpha)^m},$$
+$$\res{z=\infty}f(z)=-\left[\res{z=\alpha}f(z)+\res{z=\beta}f(z)\right]=0.$$
+
+\subsection*{(4)}
+0为二阶极点, $\pi i$为四阶极点.
+$$\res{z=0}f(z)=\left.\left[\frac{e^z}{(z-\pi i)^4}\right]'\right|_{z=0}=\left.\frac{e^z(z-4-\pi i)}{(z-\pi i)^5}\right|_{z=0}=\frac{\pi-4i}{\pi^5},$$
+$$\res{z=\pi i}f(z)=\left.\left(\frac{e^z}{z^2}\right)'''\right|_{z=\pi i}=\left.\frac{e^z(z^3-6z^2+18z-24)}{z^5}\right|_{z=\pi i}=\frac{\pi^3+6\pi^2i-18\pi-24i}{\pi^5},$$
+$$\res{z=\infty}f(z)=-\left[\res{z=0}f(z)+\res{z=\pi i}f(z)\right]=\frac{-\pi^3-6\pi^2i+17\pi+28i}{\pi^5}.$$
+
+\section{六(一)/3}
+\begin{problem}
+计算下列各积分
+\begin{enumerate}
+  \item $\displaystyle\int_{|z|=1}\frac{dz}{z\sin z}$;
+  \item $\displaystyle\frac{1}{2\pi i}\int_{|z|=2}\frac{e^{zi}}{1+z^2}dz$;
+  \item $\displaystyle\int_C\frac{dz}{(z-1)^2(z^2+1)}$, $C:x^2+y^2=2(x+y)$.
+\end{enumerate}
+\end{problem}
+\subsection*{(1)}
+在$|z|=1$内只有0为奇点.
+$$\frac{1}{z\sin z}=\frac{1}{z}\left[\frac{1}{z}+\frac{z}{6}+o(z)\right]=\frac{1}{z^2}+6+o(1).$$
+故洛朗展式中$\dfrac{1}{z}$项的值为0,
+$$\res{z=0}f(z)=0.$$
+由留数定理得
+$$\int_{|z|=1}\frac{dz}{z\sin z}=0.$$
+
+\subsection*{(2)}
+在$|z|=1$内$i$为一阶极点, $-i$为一阶极点.
+$$\res{z=i}\frac{e^{zi}}{1+z^2}=\left.\frac{e^{zi}}{z+i}\right|_{z=i}=-\frac{i}{2e},$$
+$$\res{z=-i}\frac{e^{zi}}{1+z^2}=\left.\frac{e^{zi}}{z-i}\right|_{z=-i}=\frac{ei}{2}.$$
+由留数定理得
+$$\frac{1}{2\pi i}\int_{|z|=2}\frac{e^{zi}}{1+z^2}dz=-\frac{i}{2e}+\frac{ei}{2}=\frac{i}{2}\left(e-\frac{1}{e}\right)=i\sinh1.$$
+
+\subsection*{(3)}
+$$x^2+y^2=2(x+y)\Longrightarrow (x-1)^2+(y-1)^2=2.$$
+在$C$内1为二阶极点, $i$为一阶极点, $-i$为一阶极点.
+$$\res{z=1}\frac{1}{(z-1)^2(z^2+1)}=\left.\left(\frac{1}{z^2+1}\right)'\right|_{z=1}=\left.-\frac{2z}{(z^2+1)^2}\right|_{z=1}=-\frac{1}{2}.$$
+$$\res{z=i}\frac{1}{(z-1)^2(z^2+1)}=\left.\frac{1}{(z-1)^2(z+i)}\right|_{z=i}=\frac{1}{4},$$
+$$\res{z=-i}\frac{1}{(z-1)^2(z^2+1)}=\left.\frac{1}{(z-1)^2(z-i)}\right|_{z=-i}=\frac{1}{4}.$$
+由留数定理得
+$$\int_C\frac{dz}{(z-1)^2(z^2+1)}=2\pi i\left(-\frac{1}{2}+\frac{1}{4}+\frac{1}{4}\right)=0.$$
+
+\end{document}
