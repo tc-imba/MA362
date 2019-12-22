@@ -1,0 +1,58 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{../ma362}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{math,calc,arrows.meta}
+
+\semester{Fall}
+\year{2019}
+\subtitlenumber{12}
+\author{刘逸灏 (515370910207)}
+\newcommand{\res}[1]{\mathop{\Res}\limits_{#1}}
+
+\begin{document}
+\maketitle
+
+\section{4.4/15}
+\begin{problem}
+设$f$是域$D$上非常数的全纯函数. 证明: 存在在$D$中无极限的点列$\{z_n\}$, 使得对每个$z\in D\setminus\{z_n\}$, 有$f'(z)\neq 0.$
+\end{problem}
+
+只需证明所有满足$z_n\in D$且$f'(z_n)=0$的点$z_n$都在无极限的点列$\{z_n\}$中. 这样的$z_n$是$f(z)-f(z_n)$的$m_n$阶零点, $m_n\geqslant2$. 假设$z_0$为$\{z_n\}$的一个极限点, 对于充分小的$\rho>0$, 必存在$\delta>0$, 使得对于任意$a\in B(z_0,\delta)$, $f(z)-a$在$B(z_0,\rho)$中恰有$m_0$个零点.
+同时, 也存在$z_1\in\{z_n\}$且$z_1\in B(z_0,\min\{\delta,\rho\})$, 并取$a=z_1$. 由于解析函数$f(z)-a$零点的孤立性, 可取$\rho_1\in B(0,\rho)$且$f(z)-a$在$B(z_1,\rho_1)$中没有零点, 此时必存在$\delta_1>0$, 使得对于任意$a_1\in B(z_1,\delta_1)$, $f(z)-a_1$在$B(z_1,\rho_1)$中恰有$m_1$个零点.
+由$a_1$的任意性可知取$a_1=a$产生矛盾, 故得证.
+
+\section{4.4/16}
+\begin{problem}
+设$D$是由可求长简单闭曲线围成的单连通域, $f\in H(D)\cap C(\overline{D})$. 证明: 若$f$在$\partial D$上取实值, 则$f$为常值函数. 举例说明对于一般的单连通域$D$, 结论不再成立.
+\end{problem}
+$\Im{f(z)}$在$D$内是调和函数, 且在$\partial D$上为0. 根据调和函数的最大和最小模原理得$\Im{f(z)}=0$. 又由全纯函数的性质可知, 虚部为0的全纯函数为常值函数. \medskip
+
+对于一般单连通区域, 设$D$为上半平面, 令$f(z)=z$, 在$\partial D$上有$f(z)\in R$, 但$f$显然不是常值函数.
+
+\section{4.5/4}
+\begin{problem}
+设$f\in H(B(0,R))$. 证明: $M(r)=\max\limits_{|z|=r}|f(z)|$是$[0,R)$上的增函数.
+\end{problem}
+只需证明在任取$0\leqslant r_1<r_2<R$, 有$M(r_1)\leqslant M(r_2)$. 若$f(z)$为常值函数, 显然有$M(r_1)=M(r_2)=k$; 若不是, 取区域$D=B(0,r_2)$, 则$|z|=r_1$在$D$的内部. 根据最大模原理可知
+$$M(r_1)=\max\limits_{|z|=r_1}|f(z)|<\max\limits_{|z|=r_2}|f(z)|=M(r_2).$$
+故$M(r)$是$[0,R)$上的增函数.
+
+\section{4.5/5}
+\begin{problem}
+利用最大模原理证明代数学基本定理.
+\end{problem}
+设
+$$P(z)=a_0z^n+a_1z^{n-1}+\cdots+a_n,\quad a_0\neq0$$
+为任意复系数多项式. 现要证明$P(z)$至少有一个零点.\medskip
+
+假设$P(z)$没有零点, 则$f(z)=\dfrac{1}{P(z)}$是一个整函数.
+由于$\lim\limits_{z\to\infty}P(z)=\infty$, 故能找到$R$, 使得$|z|\geqslant R$时, $|f(z)|\leqslant|f(0)|$. 由$f(z)$的连续性可知, $\max\limits_{|z|<R}|f(z)|\geqslant|f(0)|$, 故在$|z|\leqslant R$中$f(z)$的最大值可以不在边界取到. 根据最大模原理可知$f(z)$为常值函数, 与假设矛盾, 故得证$P(z)$一定有零点.
+
+\section{4.5/7}
+\begin{problem}
+设$f$是域$D$上非常数的全纯函数. 证明: 若$f$在$D$中没有零点, 则$f(z)$在$D$内不能取得最小值.
+\end{problem}
+由于$f$是域$D$上非常数的全纯函数, 且在$D$中没有零点, 则$g(z)=\dfrac{1}{f(z)}$也是域$D$上非常数的全纯函数. 假设$f(z)$在$z_0\in D$中能取得最小值, 则$g(z)$也可在$z_0$取得最大值, 这与最大模原理矛盾, 故假设不成立, 得证.
+
+\end{document}
